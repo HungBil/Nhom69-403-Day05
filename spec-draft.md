@@ -197,7 +197,7 @@ Khi AI bế tắc (intent ngoài scope, user không hài lòng, lỗi hệ thố
 | Thành viên | MSSV | Phần phụ trách |
 |------------|------|---------------|
 | Nguyễn Đông Hưng | 2A202600392 | Canvas + Problem Statement |
-| Thành viên 2 | (MSSV) | User Stories 4 paths |
+| Lưu Lương Vi Nhân | 2A202600120 | User Stories 4 paths |
 | Thành viên 3 | (MSSV) | Eval metrics + ROI |
 | Thành viên 4 | (MSSV) | Failure modes + Mini AI Spec |
 | Thành viên 5 | (MSSV) | Frontend prototype + prompt testing |
