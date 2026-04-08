@@ -210,8 +210,6 @@ Khi AI bế tắc (intent ngoài scope, user không hài lòng, lỗi hệ thố
 | Nguyễn Đông Hưng  | 2A202600392 | Canvas + Problem Statement                       |
 | Lưu Lương Vi Nhân | 2A202600120 | User Stories 4 paths                             |
 | Khuất Văn Vương   | 2A202600087 | Eval metrics + ROI, Failure modes + Mini AI Spec |
-
-|
-| Thành viên 5 | (MSSV) | Frontend prototype + prompt testing |
+| Huỳnh Văn Nghĩa | 2A202600085 | Frontend prototype + prompt testing |
 
 > **Lưu ý:** Bảng phân công sẽ được cập nhật đầy đủ họ tên + MSSV khi nhóm chốt thành viên.
