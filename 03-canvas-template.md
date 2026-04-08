@@ -1,26 +1,20 @@
-# AI Product Canvas — template
-
-Điền Canvas cho product AI của nhóm. Mỗi ô có câu hỏi guide — trả lời trực tiếp, xóa phần in nghiêng khi điền.
-
----
+# AI Product Canvas — Nhom5.2-Room
 
 ## Canvas
 
 |   | Value | Trust | Feasibility |
 |---|-------|-------|-------------|
-| **Câu hỏi guide** | User nào? Pain gì? AI giải quyết gì mà cách hiện tại không giải được? | Khi AI sai thì user bị ảnh hưởng thế nào? User biết AI sai bằng cách nào? User sửa bằng cách nào? | Cost bao nhiêu/request? Latency bao lâu? Risk chính là gì? |
-| **Trả lời** | | | |
+| **Trả lời** | **User:** Khách cá nhân lần đầu tìm hiểu xe VinFast, chưa biết nên chọn dòng nào. **Pain:** Phải đến showroom hoặc chờ chat với sale 15-30 phút, chất lượng tư vấn không đồng đều và có thể thiên vị theo doanh số. **AI giải quyết:** Hỏi 4-5 câu về số người, mục đích sử dụng, ngân sách, ưu tiên điện/xăng, quãng đường di chuyển rồi gợi ý top 2-3 dòng xe phù hợp kèm so sánh nhanh về giá, số chỗ, quãng đường pin và tag khớp nhu cầu. | **Khi AI sai:** Có thể gợi ý vượt ngân sách hoặc sai số chỗ, khiến user đi sai hướng và mất thời gian nhưng chưa gây thiệt hại tài chính trực tiếp vì chưa mua. **User biết sai:** Đọc spec, thấy giá hoặc số chỗ không khớp nhu cầu. **User sửa:** Nhấn “Không phù hợp” hoặc đổi tiêu chí để AI hỏi lại và gợi ý lại; luôn có nút “Chat với tư vấn viên” để fallback. | **Cost:** khoảng $0.003–0.01/lượt cho 1 hội thoại 4-5 turn bằng GPT-4o-mini hoặc tương đương. **Latency:** dưới 3 giây mỗi response. **Risk chính:** dữ liệu giá xe thay đổi theo campaign; câu hỏi về tài chính như trả góp/lãi suất có thể gây hiểu lầm nếu AI trả lời sai, nên phải chặn ngoài scope. |
 
 ---
 
 ## Automation hay augmentation?
 
 ☐ Automation — AI làm thay, user không can thiệp
-☐ Augmentation — AI gợi ý, user quyết định cuối cùng
 
-**Justify:** ___
+☑ Augmentation — AI gợi ý, user quyết định cuối cùng
 
-Gợi ý: nếu AI sai mà user không biết → automation nguy hiểm, cân nhắc augmentation.
+**Justify:** Đây là quyết định mua xe trị giá lớn nên AI chỉ nên thu hẹp lựa chọn từ nhiều dòng xe xuống 2-3 dòng phù hợp. User vẫn cần đọc spec, cân nhắc thực tế và lái thử trước khi quyết định. Nếu AI sai, user vẫn có thể tự sửa hoặc chuyển sang tư vấn viên.
 
 ---
 
@@ -28,22 +22,11 @@ Gợi ý: nếu AI sai mà user không biết → automation nguy hiểm, cân n
 
 | # | Câu hỏi | Trả lời |
 |---|---------|---------|
-| 1 | User correction đi vào đâu? | |
-| 2 | Product thu signal gì để biết tốt lên hay tệ đi? | |
-| 3 | Data thuộc loại nào? ☐ User-specific · ☐ Domain-specific · ☐ Real-time · ☐ Human-judgment · ☐ Khác: ___ | |
+| 1 | User correction đi vào đâu? | Khi user nhấn “Không phù hợp” hoặc thay đổi tiêu chí, lưu lại cặp (nhu cầu đầu vào, xe bị reject) để cải thiện ranking và rule matching. |
+| 2 | Product thu signal gì để biết tốt lên hay tệ đi? | Positive: user nhấn “Xem chi tiết” hoặc “Đặt lịch lái thử”. Negative: user nhấn “Không phù hợp”, thoát chat ngay sau gợi ý, hoặc chuyển sang tư vấn viên. |
+| 3 | Data thuộc loại nào? ☐ User-specific · ☑ Domain-specific · ☐ Real-time · ☐ Human-judgment · ☐ Khác: ___ | Chủ yếu là user-specific và domain-specific: nhu cầu mỗi người khác nhau, nhưng catalog xe VinFast, giá và spec là dữ liệu miền riêng của product. |
 
-**Có marginal value không?** (Model đã biết cái này chưa? Ai khác cũng thu được data này không?)
-___
-
----
-
-## Cách dùng
-
-1. Điền Value trước — chưa rõ pain thì chưa điền Trust/Feasibility
-2. Trust: trả lời 4 câu UX (đúng → sai → không chắc → user sửa)
-3. Feasibility: ước lượng cost, không cần chính xác — order of magnitude đủ
-4. Learning signal: nghĩ về vòng lặp dài hạn, không chỉ demo ngày mai
-5. Đánh [?] cho chỗ chưa biết — Canvas là hypothesis, không phải đáp án
+**Có marginal value không?** Có. Dữ liệu nhu cầu thực tế của khách VinFast như ngân sách phổ biến, số người trong gia đình, quãng đường di chuyển và mức độ chấp nhận xe điện là dữ liệu model chung không có. Nếu tích lũy đủ, nhóm có thể tối ưu ranking và hiểu segment khách hàng tốt hơn.
 
 ---
 
